@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>YouthFinance Karang Taruna</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            margin: 0;
+            font-family: "Inter", sans-serif;
+            background: #f5f7fb;
+        }
+
+        .app-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 260px;
+            background: linear-gradient(180deg, #3b82f6, #2563eb);
+            color: #fff;
+            padding: 24px;
+        }
+
+        .sidebar-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .sidebar-header i {
+            font-size: 24px;
+        }
+
+        .sidebar-header h6 {
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .sidebar-header small {
+            opacity: .8;
+        }
+
+        .menu {
+            list-style: none;
+            padding: 0;
+            margin-top: 30px;
+        }
+
+        .menu li {
+            margin-bottom: 10px;
+        }
+
+        .menu li a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            border-radius: 12px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .menu li.active a,
+        .menu li a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .menu li.logout {
+            margin-top: 40px;
+        }
+
+        /* MAIN */
+        .main-content {
+            flex: 1;
+            padding: 24px 32px;
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: flex-end;
+            background: #fff;
+            padding: 12px 20px;
+            border-radius: 14px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .05);
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+        }
+
+        .user-info img {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* HEADER */
+        .page-header h4 {
+            margin-bottom: 4px;
+        }
+
+        .page-header p {
+            color: #6b7280;
+        }
+
+        /* INFO CARD */
+        .info-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .info-card.green {
+            background: #ecfdf5;
+        }
+
+        .info-card.yellow {
+            background: #fff7ed;
+        }
+
+        .icon-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            background: #d1fae5;
+            color: #059669;
+        }
+
+        .icon-circle.yellow {
+            background: #ffedd5;
+            color: #f97316;
+        }
+
+        /* TABLE */
+        .table-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .table-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .filters {
+            display: flex;
+            gap: 10px;
+        }
+
+        .filters select {
+            border-radius: 10px;
+        }
+
+        table th {
+            color: #6b7280;
+            font-weight: 500;
+        }
+
+        .badge {
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+
+        .kas-masuk {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .kas-danger {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .kas-primary {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .verified {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .table-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 16px;
+            color: #374151;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="bi bi-house-door-fill"></i>
+                <div>
+                    <h6>YouthFinance</h6>
+                    <small>Karang Taruna</small>
+                </div>
+            </div>
+
+            <ul class="menu">
+                <li class="active">
+                    <a href="anggotadashboard.html">
+                        <i class="bi bi-grid"></i>
+                        Dashboard
+                    </a>
+                </li>
+
+                <li>
+                    <a href="histori-kas.html">
+                        <i class="bi bi-journal-text"></i>
+                        Histori Kas
+                    </a>
+                </li>
+
+                <li>
+                    <a href="histori-pembayaran.html">
+                        <i class="bi bi-receipt"></i>
+                        Histori Pembayaran
+                    </a>
+                </li>
+
+                <li class="logout">
+                    <a href="login.html">
+                        <i class="bi bi-box-arrow-right"></i>
+                        Logout
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- MAIN -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <div class="topbar">
+                <div class="user-info">
+                    <img src="https://i.pravatar.cc/150?img=12" alt="User">
+                    <span>Rudi Setiawan</span>
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+            </div>
+
+            <!-- HEADER -->
+            <div class="page-header">
+                <h4>Selamat Datang, <strong>Rudi Setiawan!</strong></h4>
+                <p>Dashboard Status & Histori Pembayaran Iuran Anda</p>
+            </div>
+
+            <!-- INFO CARDS -->
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="info-card green">
+                        <div class="icon-circle">
+                            <i class="bi bi-check-circle"></i>
+                        </div>
+                        <div>
+                            <h6>Status Kas</h6>
+                            <span class="badge bg-success">LUNAS</span>
+                            <p class="mb-0">Iuran bulan ini sudah LUNAS.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="info-card yellow">
+                        <div class="icon-circle yellow">
+                            <i class="bi bi-wallet2"></i>
+                        </div>
+                        <div>
+                            <h6>Total Iuran Anda</h6>
+                            <h4>Rp 2.300.000</h4>
+                            <p class="mb-0">Total iuran yang sudah Anda bayar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TABLE -->
+            <div class="table-card">
+                <div class="table-header">
+                    <h6>Riwayat Pembayaran</h6>
+                    <div class="filters">
+                        <select class="form-select">
+                            <option>April 2024</option>
+                        </select>
+                        <select class="form-select">
+                            <option>Semua Label</option>
+                        </select>
+                    </div>
+                </div>
+
+                <table class="table align-middle">
+                    <thead>
+                        <tr>
+                            <th>Tanggal</th>
+                            <th>Jenis Kas</th>
+                            <th>Keterangan</th>
+                            <th>Jumlah</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>23 Apr 2024</td>
+                            <td><span class="badge kas-masuk">Kas Masuk</span></td>
+                            <td>Iuran bulan April</td>
+                            <td>Rp 1.000.000</td>
+                            <td><span class="badge verified">Terverifikasi</span></td>
+                        </tr>
+                        <tr>
+                            <td>25 Mar 2024</td>
+                            <td><span class="badge kas-masuk">Kas Masuk</span></td>
+                            <td>Iuran bulan Maret</td>
+                            <td>Rp 1.500.000</td>
+                            <td><span class="badge verified">Terverifikasi</span></td>
+                        </tr>
+                        <tr>
+                            <td>25 Feb 2024</td>
+                            <td><span class="badge kas-danger">Kas Masuk</span></td>
+                            <td>Iuran bulan Februari</td>
+                            <td>Rp 500.000</td>
+                            <td><span class="badge verified">Terverifikasi</span></td>
+                        </tr>
+                        <tr>
+                            <td>25 Jan 2024</td>
+                            <td><span class="badge kas-primary">Kas Masuk</span></td>
+                            <td>Pembayaran Operasional</td>
+                            <td>Rp 1.250.000</td>
+                            <td><span class="badge verified">Terverifikasi</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="table-footer">
+                    <span><strong>Jumlah Tunggakan :</strong> Rp 0</span>
+                    <span>&laquo; Sebelumnya | 1 | Selanjutnya &raquo;</span>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+
+</html>
